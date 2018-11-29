@@ -14,37 +14,36 @@
     <div class="col">
     <p>
       Queen are a British rock band that formed in London in 1970. Their classic line-up was Freddie Mercury (lead vocals and piano), Brian May (lead guitar and vocals), Roger Taylor (drums and vocals), and John Deacon (bass guitar). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock, into their music. Find more information at <a href="https://en.wikipedia.org/wiki/Queen_(band)">Wikipedia</a>.
-    </p>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-3">
+    </div>
+    </p>
     <h3>Members</h3>
+      <div>
       {% for member in members %}
-        <div class="card-deck">
-        <div class="card border-dark mb-3" style="width: 15rem;">
+      <div class="card border-dark mb-4" style="width: 15rem;">
         <img class="card-img-top" src="assets/img/members/{{ member.imagebw }}" alt="{{ member.name }}">
-        <div class="card-body">
-        <h5 class="card-title">{{ member.name }}</h5>
+      <div class="card-body text-center">
+      <h5 class="card-title">{{ member.name }}</h5>
         <a href="{{ member.slug }}.html" class="btn btn-primary">More on {{ member.name }}</a>
-        </div>
-        </div>
-        </div>
+      </div>
+      </div>
         {% else %}
           <li>This would display if the 'members' collection were empty</li>
         {% endfor %}
-    </div>
-  </div>
      </ul>
     <h3>Discography</h3>
-     <ul>
       {% for album in discography %}
-        <li>{{ album.title }}, {{ album.year}}</li>
+      <ul class="list" style="width: 15rem;">
+        <li class="media border-dark mb-4">
+          <img class="mr-3" src="assets/img/discs/{{ album.image }}" alt="{{ album.title }}">
+        <div class="media-body">
+          <h5 class="mt-0 mb-1">{{ album.title }}</h5>
+            <p>{{ album.year }}</p>
+        </div>
+        </li>
       {% else %}
         <li>This would display if the 'albums' collection were empty</li>
       {% endfor %}
       </ul>
-    </div>
-  </div>
 </div>
 {% endblock %}

@@ -7,7 +7,7 @@
 <div class="container text-center">
   <div class="row">
     <div class="col">
-      <h1>Meet Queen!</h1>
+      <h1 class="title">Meet Queen!</h1>
     </div>
   </div>
   <div class="row">
@@ -22,27 +22,28 @@
           <img class="card-img-top" src="assets/img/members/{{ member.imagebw }}" alt="{{ member.name }}">
         <div class="card-body text-center">
         <h5 class="card-title">{{ member.name }}</h5>
-          <a href="{{ member.slug }}.html" class="btn btn-primary">More on {{ member.name }}</a>
+          <a href="{{ member.slug }}.html" class="btn btn-secondary">More on {{ member.name }}</a>
         </div>
         </div>
           {% else %}
             <li>This would display if the 'members' collection were empty</li>
           {% endfor %}
       </ul>
-      <h3 class="title">Discography</h3>
-        <ul class="list text-center" style="width: 15rem;">
-        {% for disc in discography %}
-          <li class="media border-dark mb-4">
-            <img class="mr-3" src="assets/img/discs/{{ disc.image }}" alt="{{ disc.title }}">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">{{ disc.title }}</h5>
-              <p>{{ disc.year }}</p>
-          </div>
-          </li>
-        {% else %}
-          <li>This would display if the 'albums' collection were empty</li>
-        {% endfor %}
-        </ul>
+    <h3 class="title">Discography</h3>
+    <br>
+      <ul class="list-unstyled d-lg-inline" style="width: 15rem;">
+      {% for disc in discography %}
+        <li class="media border-dark mb-4 d-lg-inline">
+          <img class="mr-3" src="assets/img/discs/{{ disc.image }}" alt="{{ disc.title }}">
+        <div class="media-body">
+          <h5 class="mt-0 mb-1">{{ disc.title }}</h5>
+            <p>{{ disc.year }}</p>
+        </div>
+        </li>
+      {% else %}
+        <li>This would display if the 'albums' collection were empty</li>
+      {% endfor %}
+      </ul>
     </div>
   </div>
 </div>

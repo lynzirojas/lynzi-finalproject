@@ -7,8 +7,12 @@
   
   .jumbotron {
     margin-bottom: 30px;
-    h1, p {
+    h1 {
+      font-family: 'Copse', serif;
+      margin-left: 84px;
+    }
+    p {
         font-family: 'Arvo', serif;
-        margin-left: 25px;
+        margin-left: 50px;
     }
   }

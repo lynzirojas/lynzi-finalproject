@@ -10,6 +10,7 @@
       <h1 class="title">Meet Queen!</h1>
     </div>
   </div>
+
   <div class="row">
     <div class="col">
       <p>
@@ -20,39 +21,49 @@
       <p class="source text-right">
       Source: <a href="https://en.wikipedia.org/wiki/Queen_(band)">Wikipedia</a>
       </p>
-    <h3 class="title">Band Members</h3>
-    <br>
-      <ul class="card-deck">
+    </div>
+  </div>
+
+  <h3 class="title">Band Members</h3>
+  <br>
+    <div class="card-deck">
+      <div class="row">
         {% for member in members %}
+        <div class="col-sm-6 col-lg-3">
         <div class="card border-dark mb-4" style="width: 15rem;">
           <img class="card-img-top" src="assets/img/members/{{ member.imagebw }}" alt="{{ member.name }}">
         <div class="card-body text-center">
         <h5 class="card-title">{{ member.name }}</h5>
-          <a href="{{ member.slug }}.html" class="btn btn-secondary">More on {{ member.name }}</a>
+          <a href="{{ member.slug }}.html" class="btn btn-secondary btn-sm">More on {{ member.name }}</a>
+        </div>
         </div>
         </div>
           {% else %}
             <li>This would display if the 'members' collection were empty</li>
           {% endfor %}
-      </ul>
-    <h3 class="title">Discography</h3>
-    <br>
-      <ul class="list-unstyled d-lg-inline" style="width: 15rem;">
+      </div>
+    </div>
+ 
+  <h3 class="title">Discography</h3>
+  <br>
+    <div class="list-unstyled d-lg-inline" style="width: 15rem;">
+      <div class="row">
       {% for disc in discography %}
-        <li class="media border-dark mb-4 d-lg-inline">
+        <div class="col-sm-12 col-lg-4">
+        <li class="media border-dark mb-4 d-inline d-sm-line d-lg-inline">
           <img class="mr-3" src="assets/img/discs/{{ disc.image }}" alt="{{ disc.title }}">
         <div class="media-body">
         <br>
           <h5 class="mt-0 mb-1">{{ disc.title }}</h5>
             <p>{{ disc.year }}</p>
         </div>
+        </div>
         </li>
       {% else %}
         <li>This would display if the 'albums' collection were empty</li>
       {% endfor %}
-      </ul>
+      </div>
     </div>
-  </div>
 </div>
 
 {% endblock %}
